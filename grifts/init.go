@@ -1,7 +1,7 @@
 package grifts
 
 import (
-	"metermodels/actions"
+	"api_sem_database/actions"
 
 	"github.com/gobuffalo/buffalo"
 )

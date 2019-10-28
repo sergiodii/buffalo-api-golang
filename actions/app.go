@@ -7,9 +7,6 @@ import (
 	paramlogger "github.com/gobuffalo/mw-paramlogger"
 	"github.com/unrolled/secure"
 
-	"metermodels/models"
-
-	"github.com/gobuffalo/buffalo-pop/pop/popmw"
 	contenttype "github.com/gobuffalo/mw-contenttype"
 	"github.com/gobuffalo/x/sessions"
 	"github.com/rs/cors"
@@ -41,7 +38,7 @@ func App() *buffalo.App {
 			PreWares: []buffalo.PreWare{
 				cors.Default().Handler,
 			},
-			SessionName: "_metermodels_session",
+			SessionName: "_api_sem_database_session",
 		})
 
 		// Automatically redirect to SSL
@@ -52,11 +49,6 @@ func App() *buffalo.App {
 
 		// Set the request content type to JSON
 		app.Use(contenttype.Set("application/json"))
-
-		// Wraps each request in a transaction.
-		//  c.Value("tx").(*pop.Connection)
-		// Remove to disable this.
-		app.Use(popmw.Transaction(models.DB))
 
 		app.GET("/", HomeHandler)
 	}

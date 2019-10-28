@@ -2,8 +2,8 @@
 # https://docs.docker.com/engine/userguide/eng-image/multistage-build/
 FROM gobuffalo/buffalo:v0.14.11 as builder
 
-RUN mkdir -p $GOPATH/src/Documents
-WORKDIR $GOPATH/src/Documents
+RUN mkdir -p $GOPATH/src/metermodels
+WORKDIR $GOPATH/src/metermodels
 
 ADD . .
 ENV GO111MODULES=on

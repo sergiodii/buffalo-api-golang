@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"metermodels/actions"
+	"api_sem_database/actions"
 )
 
 // main is the starting point for your Buffalo application.

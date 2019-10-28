@@ -1,7 +1,7 @@
-name = "metermodels"
-bin = "bin/metermodels"
+name = "api-sem-database"
+bin = "bin/api-sem-database"
 vcs = "git"
-with_pop = true
+with_pop = false
 with_sqlite = false
 with_dep = false
 with_webpack = false
